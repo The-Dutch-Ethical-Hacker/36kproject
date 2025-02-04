@@ -1,28 +1,32 @@
+const videoElement = document.getElementById('video-feed');
+const startButton = document.getElementById('start-button');
+const cameraSelect = document.getElementById('camera-select');
+
 // Start de camera en toon de feed op het scherm
 async function setupCamera() {
-    const videoElement = document.getElementById('video-feed');
-    const cameraSelect = document.getElementById('camera-select');
     const selectedCamera = cameraSelect.value;
 
-    // Standaard camera instellingen: 
     const constraints = {
         video: {
-            facingMode: selectedCamera // Kies voor de front camera of achter camera
+            facingMode: selectedCamera
         }
     };
 
     try {
+        // Verkrijg toegang tot de camera
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
         videoElement.srcObject = stream;
     } catch (error) {
-        console.error("Camera could not be accessed:", error);
+        console.error("Camera kon niet worden geopend:", error);
         alert("Er is een fout opgetreden bij het openen van de camera.");
     }
 }
 
-// Stuur een frame naar de backend voor voorspelling
+// Zet de camera op bij het klikken op de knop
+startButton.addEventListener('click', setupCamera);
+
+// Functie voor voorspelling (voorbeeld)
 function startPrediction() {
-    const videoElement = document.getElementById('video-feed');
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -30,7 +34,7 @@ function startPrediction() {
     canvas.width = videoElement.videoWidth;
     canvas.height = videoElement.videoHeight;
 
-    // Teken het huidige frame op het canvas
+    // Teken het huidige frame van de video
     ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
 
     // Zet de afbeelding om naar een Base64-gecodeerde string
@@ -55,9 +59,3 @@ function startPrediction() {
         document.getElementById('prediction-text').innerText = 'Er is een fout opgetreden.';
     });
 }
-
-// Zorg ervoor dat de camera wordt ingeschakeld wanneer de pagina wordt geladen
-window.onload = setupCamera;
-
-// Start de camera bij het klikken op de knop
-document.getElementById('start-button').addEventListener('click', setupCamera);
