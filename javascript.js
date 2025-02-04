@@ -4,6 +4,7 @@ async function setupCamera() {
     const cameraSelect = document.getElementById('camera-select');
     const selectedCamera = cameraSelect.value;
 
+    // Standaard camera instellingen: 
     const constraints = {
         video: {
             facingMode: selectedCamera // Kies voor de front camera of achter camera
@@ -57,3 +58,6 @@ function startPrediction() {
 
 // Zorg ervoor dat de camera wordt ingeschakeld wanneer de pagina wordt geladen
 window.onload = setupCamera;
+
+// Start de camera bij het klikken op de knop
+document.getElementById('start-button').addEventListener('click', setupCamera);
