@@ -1,41 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The 36K Project - Roulette Tracker</title>
+    <title>Roulette Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>The 36K Project</h1>
-        <p>Live Roulette Tracking with AI</p>
+        <h1>Roulette Tracker</h1>
+        <p>Voorspel waar het balletje zal landen</p>
     </header>
 
     <main>
-        <section class="camera-section">
-            <h2>Live Camera Feed</h2>
-            <div>
-                <label for="camera-select">Select Camera:</label>
-                <select id="camera-select">
-                    <option value="user">Front Camera</option>
-                    <option value="environment">Rear Camera</option>
-                </select>
+        <div class="camera-section">
+            <select id="camera-select">
+                <option value="environment">Achter camera</option>
+                <option value="user">Voorkamera</option>
+            </select>
+            <button id="start-button">Start Camera</button>
+            <div id="video-container">
+                <video id="video-feed" autoplay></video>
             </div>
-            <video id="video-feed" width="640" height="480" autoplay></video>
-            <button onclick="startPrediction()">Start Prediction</button>
-        </section>
+        </div>
 
-        <section class="prediction-result">
-            <h2>Prediction:</h2>
-            <p id="prediction-text">Waiting for prediction...</p>
-        </section>
+        <div class="prediction-result" id="prediction-result">
+            <p>Voorspelling: <span id="prediction-text">-</span></p>
+        </div>
     </main>
 
     <footer>
-        <p>Data logged by The 36K Project.</p>
+        <p>&copy; 2025 Roulette Tracker - Alle rechten voorbehouden</p>
     </footer>
 
-    <script src="javascript.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
