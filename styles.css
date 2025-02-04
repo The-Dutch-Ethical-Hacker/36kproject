@@ -1,0 +1,170 @@
+/* Algemene instellingen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Donkere achtergrond voor casino-look */
+    color: #fff;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FFD700; /* Goudkleurige tekst voor een luxe uitstraling */
+}
+
+/* Header Styling */
+header {
+    background-color: #1c1c1c;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 3em;
+    color: #FFD700;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #D3D3D3;
+    margin-top: 10px;
+}
+
+/* Hoofdsectie */
+main {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a); /* Subtiele gradient voor diepte */
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Camera sectie */
+.camera-section {
+    margin-bottom: 30px;
+}
+
+#video-feed {
+    width: 100%;
+    height: 480px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    background-color: #1a1a1a;
+}
+
+button {
+    background-color: #FFD700;
+    color: #121212;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #f0c800;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(1);
+}
+
+/* Resultaten sectie */
+.prediction-result {
+    margin-top: 40px;
+    font-size: 1.5em;
+    color: #FFD700;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.prediction-result p {
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1c1c1c;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    color: #D3D3D3;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Dropdown menu voor camera */
+select {
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #FFD700;
+    font-size: 1em;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #121212;
+    color: #FFD700;
+}
+
+/* Responsive ontwerp voor mobiele apparaten */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .camera-section {
+        margin-bottom: 15px;
+    }
+
+    button {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+
+    .prediction-result {
+        font-size: 1.2em;
+        width: 80%;
+        max-width: 100%;
+        margin: 15px auto;
+    }
+
+    #video-feed {
+        height: 300px;
+    }
+}

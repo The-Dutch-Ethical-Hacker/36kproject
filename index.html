@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 36K Project - Roulette Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>The 36K Project</h1>
+        <p>Live Roulette Tracking with AI</p>
+    </header>
+
+    <main>
+        <section class="camera-section">
+            <h2>Live Camera Feed</h2>
+            <div>
+                <label for="camera-select">Select Camera:</label>
+                <select id="camera-select">
+                    <option value="user">Front Camera</option>
+                    <option value="environment">Rear Camera</option>
+                </select>
+            </div>
+            <video id="video-feed" width="640" height="480" autoplay></video>
+            <button onclick="startPrediction()">Start Prediction</button>
+        </section>
+
+        <section class="prediction-result">
+            <h2>Prediction:</h2>
+            <p id="prediction-text">Waiting for prediction...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data logged by The 36K Project.</p>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
